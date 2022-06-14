@@ -1,2 +1,2 @@
-# my-website
+# Website of Linas
 My website

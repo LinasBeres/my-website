@@ -2,3 +2,12 @@
 *.css.map
 *.sass.map
 *.scss.map
+
+*.js
+*.index
+*.swp
+
+package-lock.json
+node_modules/
+bower_components/
+
