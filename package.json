@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/LinasBeres/my-website/issues"
   },
-  "homepage": "https://github.com/LinasBeres/my-website#readme"
+  "homepage": "https://github.com/LinasBeres/my-website#readme",
+  "devDependencies": {
+    "coffeescript": "^2.7.0",
+    "grunt": "^1.5.3",
+    "pug": "^3.0.2",
+    "sass": "^1.52.3"
+  }
 }
