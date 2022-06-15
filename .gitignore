@@ -4,7 +4,7 @@
 *.scss.map
 
 *.js
-*.index
+*.html
 *.swp
 
 package-lock.json
