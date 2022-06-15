@@ -1,0 +1,120 @@
+//+++++++++++++++++++++++++++++++++|
+//++++++++ Main Sass File +++++++++|
+//+++++++++++++++++++++++++++++++++|
+
+//++++ Colors
+//+++++++++++++
+$bg_colour: #282828
+$brbg_colour: #3c3836
+$dkbg_colour: #1d2021
+$fg_colour: #ebdbb2
+$brfg_colour: #fbf1c7
+$dkfg_colour: #d5c4a1
+$red_colour: #cc241d
+$brred_colour: #fb4934
+$green_colour: #98971a
+$brgreen_colour: #b8bb26
+$yellow_colour: #d79921
+$bryellow_colour: #fabd2f
+$blue_colour: #458588
+$brblue_colour: #83a598
+$purple_colour: #b16286
+$brpurple_colour: #d3869b
+$aqua_colour: #689d6a
+$braqua_colour: #83c07c
+$orange_colour: #d65d0e
+$brorange_colour: #fe8019
+
+//++++ Super Classes
+//++++++++++++++++++++
+#center
+  display: flex
+  align-items: center
+  justify-content: center
+
+//++++ Fonts
+//++++++++++++
+@font-face
+  font-family: tron
+  src: url('/fonts/tron.ttf') format('truetype')
+
+//++++ Main Body
+//++++++++++++++
+html, body
+  height: 100%
+  width: 100%
+  background-color: $bg_colour
+  color: $fg_colour
+
+//++++ Main Page
+//++++++++++++++
+.centre
+  @extend #center
+  margin: auto
+  width: 100%
+  height: 100%
+
+.horizontal_line
+  width: 100%
+  border-top: 4px solid $dkbg_colour
+  margin: 1px 0px 1px 0px
+
+.inline
+  margin: 30px 0px 10px 0px
+
+.me
+  width: 200px
+  height: 200px
+  border-radius: 50%
+  display: block
+  margin: 0px auto 50px auto
+
+
+//++++ Links
+//++++++++++
+.links
+  width: 150px
+  float: left
+  margin: 0px 5px 0px 5px
+
+  .title
+    border: 1px solid rgba(84,110,122,0.31372549019)
+    font-size: 20px
+    width: 100%
+    height: 35px
+    background-color: blue
+    color: $brfg_colour
+    @extend #center
+
+  .list
+    text-align: center
+
+  a
+    display: block
+    margin: 5px 0px 5px 0px
+    text-decoration: none
+    color: $brfg_colour
+
+  a:hover, a:focus
+    text-decoration: none !important
+    color: $dkfg_colour
+
+  a:visited
+    color: $fg_colour
+
+.projects
+  .title
+    background-color: $orange_colour
+
+.resume
+  .title
+    background-color: $aqua_colour
+
+.socials
+  .title
+    background-color: $red_colour
+
+.interests
+  .title
+    background-color: $green_colour
+

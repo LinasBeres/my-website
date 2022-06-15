@@ -1,0 +1,69 @@
+extends partial/page
+
+
+//--------------------------------------------------------\\
+//- ---------------- Mixins of goodness ---------------- -\\
+//--------------------------------------------------------\\
+
+mixin projects
+  .projects.links
+    div.title Projects
+    div.horizontal_line
+    div.list
+      a(href="https://github.com/LinasBeres/rez-packages") Rez Package Collector
+      a(href="https://github.com/LinasBeres/tracer") Tracer - name tbd
+
+mixin socials
+  .socials.links
+    div.title Socials
+    div.horizontal_line
+    div.list
+      a(href="https://github.com/LinasBeres") Github
+      a(href="https://uk.linkedin.com/in/linas-beresna") LinkedIn
+      a(href="") Contact
+
+mixin resume
+  .resume.links
+    div.title Resume
+    div.horizontal_line
+    div.list
+      a(href="") Pretty
+      a(href="") Simple
+
+mixin interests
+  .interests.links
+    div.title Interests
+    div.horizontal_line
+    div.list
+      a(href="") Graphics!
+      a(href="") 🏂 Snowboarding 🏂
+      a(href="") Travelling
+      a(href="") Running
+
+mixin about
+  .about
+    - var eugene = '<a href="https://www.dgp.toronto.edu/~elf/">Eugene Fiume</a>'
+    - var gruvi = '<a href="https://gruvi.cs.sfu.ca/">GrUVi</a>'
+    p Hello hello! I'm a PhD student at !{gruvi} labs at SFU and am supervised by !{eugene}
+
+//-----------------------------------------------------------\\
+//- ----------------- Main Page Extensions ---------------- -\\
+//-----------------------------------------------------------\\
+append meta
+  title Home Page | Index
+
+block body
+  div.centre
+    div.holder
+      img.me(src='./images/me.jpg')
+      +about
+      div.inline
+        +projects
+        +socials
+        +resume
+        +interests
+
+append scripts
+  script(src="scripts/form.js")
+  script(src="scripts/time.js")
+  script(src="scripts/index.js")

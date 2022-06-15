@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/LinasBeres/my-website#readme",
   "devDependencies": {
+    "bower": "^1.8.14",
     "coffeescript": "^2.7.0",
     "grunt": "^1.5.3",
     "pug": "^3.0.2",
