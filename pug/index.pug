@@ -40,8 +40,8 @@ mixin interests
       a(href="") Travelling
       a(href="") Running
 
-mixin about
-  .about
+mixin content
+  .content
     - var gruvi = '<a href="https://gruvi.cs.sfu.ca/">GrUVi</a>'
     - var eugene = '<a href="https://www.dgp.toronto.edu/~elf/">Eugene Fiume</a>'
     - var tobias = '<a href="https://www.homepages.ucl.ac.uk/~ucactri/">Tobias Ritschel</a>'
@@ -63,7 +63,7 @@ block body
     div.holder
       a(href="./index.html")
         img.me(src='./images/me.jpg')
-      +about
+      +content
       div.inline
         +projects
         +socials
