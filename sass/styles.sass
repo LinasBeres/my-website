@@ -25,13 +25,6 @@ $braqua_colour: #83c07c
 $orange_colour: #d65d0e
 $brorange_colour: #fe8019
 
-//++++ Super Classes
-//++++++++++++++++++++
-#center
-  display: flex
-  align-items: center
-  justify-content: center
-
 //++++ Fonts
 //++++++++++++
 @font-face
@@ -48,11 +41,16 @@ html, body
 
 //++++ Main Page
 //++++++++++++++
-.centre
-  @extend #center
-  margin: auto
-  width: 100%
-  height: 100%
+.pageContent
+  padding: 45px 0px 0px 0px
+  flex: 1 0 auto
+
+.holder
+  max-width: 700px
+  margin-left: auto
+  margin-right: auto
+  padding-right: 30px
+  padding-left: 30px
 
 .horizontal_line
   width: 100%
@@ -68,6 +66,23 @@ html, body
   border-radius: 50%
   display: block
   margin: 0px auto 50px auto
+  border: 1px solid $dkbg_colour
+
+.about
+  margin: 0px 25px 0px 25px
+  padding: 8px
+  background-color: $dkbg_colour
+  box-shadow: 2px 2px 7px $bg_colour inset
+  border: 1px solid $dkbg_colour
+
+  p
+    margin: 0px
+
+a
+  color: $brfg_colour
+
+a:hover, a:focus
+  color: $dkfg_colour
 
 
 //++++ Links
@@ -84,7 +99,9 @@ html, body
     height: 35px
     background-color: blue
     color: $brfg_colour
-    @extend #center
+    display: grid
+    align-items: center
+    justify-content: center
 
   .list
     text-align: center
@@ -93,14 +110,6 @@ html, body
     display: block
     margin: 5px 0px 5px 0px
     text-decoration: none
-    color: $brfg_colour
-
-  a:hover, a:focus
-    text-decoration: none !important
-    color: $dkfg_colour
-
-  a:visited
-    color: $fg_colour
 
 .projects
   .title

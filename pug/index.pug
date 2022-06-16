@@ -42,18 +42,19 @@ mixin interests
 
 mixin about
   .about
-    - var eugene = '<a href="https://www.dgp.toronto.edu/~elf/">Eugene Fiume</a>'
     - var gruvi = '<a href="https://gruvi.cs.sfu.ca/">GrUVi</a>'
-    p Hello hello! I'm a PhD student at !{gruvi} labs at SFU and am supervised by !{eugene}
+    - var eugene = '<a href="https://www.dgp.toronto.edu/~elf/">Eugene Fiume</a>'
+    - var tobias = '<a href="https://www.homepages.ucl.ac.uk/~ucactri/">Tobias Ritschel</a>'
+    p Hello hello! I'm a PhD student at !{gruvi} labs at SFU and am supervised by !{eugene}. My research is in the intersection of realtime and photorealistic rendering. I did my masters at UCL under !{tobias} and have worked for a couple of years in the VFX and animation industry.
 
 //-----------------------------------------------------------\\
 //- ----------------- Main Page Extensions ---------------- -\\
 //-----------------------------------------------------------\\
 append meta
-  title Home Page | Index
+  title Home | Linas Beresna
 
 block body
-  div.centre
+  div.pageContent
     div.holder
       img.me(src='./images/me.jpg')
       +about
