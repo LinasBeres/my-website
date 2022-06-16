@@ -20,7 +20,7 @@ mixin socials
     div.list
       a(href="https://github.com/LinasBeres") Github
       a(href="https://uk.linkedin.com/in/linas-beresna") LinkedIn
-      a(href="") Contact
+      a(href="./views/contact.html") Contact
 
 mixin resume
   .resume.links
@@ -53,10 +53,16 @@ mixin about
 append meta
   title Home | Linas Beresna
 
+append styles
+  link(rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css")
+  link(rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap-theme.min.css")
+  link(rel="stylesheet" href="./stylesheets/styles.css")
+
 block body
   div.pageContent
     div.holder
-      img.me(src='./images/me.jpg')
+      a(href="./index.html")
+        img.me(src='./images/me.jpg')
       +about
       div.inline
         +projects
