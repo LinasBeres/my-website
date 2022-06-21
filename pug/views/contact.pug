@@ -8,9 +8,11 @@ append styles
   link(rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css")
   link(rel="stylesheet" href="../stylesheets/styles.css")
 
-mixin contactContent
+mixin contactContent(titleContent)
   .content
-    p Hello my name is Linas but you already know this....
+    .title= titleContent
+    .block
+      block
 
 
 block body
@@ -18,4 +20,16 @@ block body
     div.holder
       a(href="../index.html")
         img.me(src='../images/me.jpg')
-      +contactContent
+      .address
+        +contactContent("Fan Mail Address")
+          p GrUVi Lab, TASC-1,
+          p School of Computing Science
+          p Simon Fraser University
+          p 8888 University Drive
+          p Burnaby, B.C
+          p Canada V5A 1S6
+      .email
+        +contactContent("Personal Email")
+          p beres dot linas at gmail dot com
+        +contactContent("Research Email")
+          p linas underscore beresna at sfu dot com

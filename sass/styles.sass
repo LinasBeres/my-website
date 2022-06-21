@@ -49,8 +49,8 @@ html, body
   max-width: 700px
   margin-left: auto
   margin-right: auto
-  padding-right: 30px
-  padding-left: 30px
+  padding-right: 20px
+  padding-left: 20px
 
 .horizontal_line
   width: 100%
@@ -58,26 +58,31 @@ html, body
   margin: 1px 0px 1px 0px
 
 .inline
-  margin: 30px 0px 10px 0px
+  margin: 20px 0px 10px 0px
 
 .me
   width: 200px
   height: 200px
   border-radius: 50%
   display: block
-  margin: 0px auto 50px auto
+  margin: 0px auto 10px auto
   border: 1px solid $dkbg_colour
 
 .content
-  margin: 0px 25px 0px 25px
-  padding: 8px
-  background-color: $dkbg_colour
-  box-shadow: 2px 2px 7px $bg_colour inset
-  border: 1px solid $dkbg_colour
+  margin-top: 20px
+  .title
+    font-size: 2em
+    font-weight: 750
+    text-align: center
+  .block
+    margin: 0px 25px 0px 25px
+    padding: 8px
+    background-color: $dkbg_colour
+    box-shadow: 2px 2px 7px $bg_colour inset
+    border: 1px solid $dkbg_colour
 
-  p
-    margin: 0px
-
+    p
+      margin: 0px
 a
   color: $brfg_colour
 
@@ -127,3 +132,17 @@ a:hover, a:focus
   .title
     background-color: $green_colour
 
+//++++ Contact
+//++++++++++++
+
+.address, .email
+  max-width: 330px
+  width: 330px
+  float: left
+  margin: 0px 0px
+
+  .title
+    font-size: 1.5em
+
+.email
+  text-align: center

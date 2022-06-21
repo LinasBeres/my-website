@@ -28,7 +28,7 @@ mixin resume
     div.horizontal_line
     div.list
       a(href="") Pretty
-      a(href="") Simple
+      a(href="./files/linas-beresna-cv.pdf") Simple
 
 mixin interests
   .interests.links
@@ -42,10 +42,12 @@ mixin interests
 
 mixin content
   .content
-    - var gruvi = '<a href="https://gruvi.cs.sfu.ca/">GrUVi</a>'
-    - var eugene = '<a href="https://www.dgp.toronto.edu/~elf/">Eugene Fiume</a>'
-    - var tobias = '<a href="https://www.homepages.ucl.ac.uk/~ucactri/">Tobias Ritschel</a>'
-    p Hello hello! I'm a PhD student at !{gruvi} labs at SFU and am supervised by !{eugene}. My research is in the intersection of realtime and photorealistic rendering. I did my masters at UCL under !{tobias} and have worked for a couple of years in the VFX and animation industry.
+    .title Linas Beresna
+    .block
+      - var gruvi = '<a href="https://gruvi.cs.sfu.ca/">GrUVi</a>'
+      - var eugene = '<a href="https://www.dgp.toronto.edu/~elf/">Eugene Fiume</a>'
+      - var tobias = '<a href="https://www.homepages.ucl.ac.uk/~ucactri/">Tobias Ritschel</a>'
+      p Hello hello! I'm a PhD student at !{gruvi} labs at SFU and am supervised by !{eugene}. My research is in the intersection of realtime and photorealistic rendering. I did my masters at UCL under !{tobias} and have worked for a couple of years in the VFX and animation industry.
 
 //-----------------------------------------------------------\\
 //- ----------------- Main Page Extensions ---------------- -\\
