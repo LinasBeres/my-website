@@ -3,6 +3,12 @@ mixin info
   meta(name="description" content="My home page about Linas - Me!")
   //- link(rel="shortcut icon" href="images/vytis.jpg")
 
+mixin content(titleContent)
+  .content
+    .title= titleContent
+    .block
+      block
+
 doctype html
 html
   head

@@ -8,20 +8,13 @@ append styles
   link(rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css")
   link(rel="stylesheet" href="../stylesheets/styles.css")
 
-mixin contactContent(titleContent)
-  .content
-    .title= titleContent
-    .block
-      block
-
-
 block body
   div.pageContent
     div.holder
       a(href="../index.html")
         img.me(src='../images/me.jpg')
       .address
-        +contactContent("Fan Mail Address")
+        +content("Fan Mail Address")
           p GrUVi Lab, TASC-1,
           p School of Computing Science
           p Simon Fraser University
@@ -29,7 +22,7 @@ block body
           p Burnaby, B.C
           p Canada V5A 1S6
       .email
-        +contactContent("Personal Email")
+        +content("Personal Email")
           p beres dot linas at gmail dot com
-        +contactContent("Research Email")
+        +content("Research Email")
           p linas underscore beresna at sfu dot com

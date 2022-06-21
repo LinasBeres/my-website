@@ -1,0 +1,17 @@
+extends ../partial/page
+
+append meta
+  title Travelling | Linas Beresna
+
+append styles
+  link(rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css")
+  link(rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css")
+  link(rel="stylesheet" href="../stylesheets/styles.css")
+
+block body
+  div.pageContent
+    div.holder
+      a(href="../index.html")
+        img.me(src='../images/me.jpg')
+      +content("Under Construction")
+        p Please wait until this page has been built.
