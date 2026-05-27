@@ -16,11 +16,25 @@ html
     +info
     block styles
     block meta
-
+    script.
+      (function(){if(localStorage.getItem('site-theme')==='light')document.documentElement.classList.add('light-mode');})();
 
   body
+    button.theme-toggle#theme-toggle(type="button") Light Mode
     block body
     block scripts
       script(src="https://code.jquery.com/jquery-3.7.1.min.js")
       script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js")
       script(src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js")
+    script.
+      (function(){
+        var t=document.getElementById('theme-toggle');
+        if(!t)return;
+        var h=document.documentElement;
+        t.textContent=h.classList.contains('light-mode')?'Dark Mode':'Light Mode';
+        t.addEventListener('click',function(){
+          var l=h.classList.toggle('light-mode');
+          t.textContent=l?'Dark Mode':'Light Mode';
+          localStorage.setItem('site-theme',l?'light':'dark');
+        });
+      })();

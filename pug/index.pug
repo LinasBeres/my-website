@@ -10,11 +10,15 @@ mixin paper(thumbnail, title, authors, venue, projectUrl, paperUrl)
     img.pub-thumbnail(src=thumbnail alt=title)
     .pub-info
       .pub-title
+        if projectUrl
           a(href=projectUrl)= title
-      .pub-authors!= authors.replace('Linas Beresna', '<strong>Linas Beresna</strong>')
+        else
+          a(href=paperUrl)= title
+      .pub-authors!= authors.replace('Linas Beresna', '<strong>Linas Beresna</strong>').replace('Beresna, L.', '<strong>Beresna, L.</strong>')
       .pub-venue= venue
     .pub-buttons
-      a.pub-btn(href=projectUrl) Project
+      if projectUrl
+        a.pub-btn(href=projectUrl) Project
       a.pub-btn(href=paperUrl) Paper
 
 mixin socials
@@ -31,7 +35,7 @@ mixin resume
     div.title Resume
     div.horizontal_line
     div.list
-      a(href="./views/resume.html") <s>Pretty</s>
+      a(href="./views/resume.html") Pretty
       a(href="./files/linas-beresna-cv.pdf") Simple
 
 mixin interests
@@ -55,20 +59,22 @@ append styles
 block body
   div.pageContent
     div.holder
-      a(href="./index.html")
-        img.me(src='./images/me.jpg')
+      .intro-row
+        a(href="./index.html")
+          img.me(src='./images/me.jpg')
+        div.inline
+          +socials
+          +resume
+          +interests
       +content("Linas Beresna")
         - var gruvi = '<a href="https://gruvi.cs.sfu.ca/">GrUVi</a>'
         - var eugene = '<a href="https://www.dgp.toronto.edu/~elf/">Eugene Fiume</a>'
         - var tobias = '<a href="https://www.homepages.ucl.ac.uk/~ucactri/">Tobias Ritschel</a>'
-        p Hello hello! I'm a PhD student at !{gruvi} labs at SFU and am supervised by !{eugene}. My research is in visualisation, photorealistic rendering, austere graphics and differentiable rendering. I did my masters at UCL under !{tobias} and have worked for a couple of years in the VFX and animation industry.
-      div.inline
-        +socials
-        +resume
-        +interests
+        p Hello hello! I'm a PhD candidate at !{gruvi} labs at SFU and am supervised by !{eugene}. My research is in visualisation, photorealistic rendering, austere graphics and differentiable rendering. I did my masters at UCL under !{tobias} and have worked for a couple of years in the VFX and animation industry.
     div.publications-holder
       +content("Publications")
         +paper('./images/papers/placeholder.jpg', 'Glare Mitigation using a Differentiable Unified Glare Rating', 'Linas Beresna, Eugene Fiume', 'Eurographics Symposium on Rendering (EGSR), 2026', './views/egsr2026.html', './files/papers/egsr2026.pdf')
+        +paper('./images/papers/medical-image.jpg', 'Minimum Resolution Requirements of Digital Pathology Images for Accurate Classification', 'Lydia Neary-Zajiczek, Linas Beresna, Benjamin Razavi, Vijay Pawar, Michael Shaw, Danail Stoyanov', 'Medical Image Analysis, 2023', null, 'https://pubmed.ncbi.nlm.nih.gov/37536022/')
 
 append scripts
   script(src="js/form.js")

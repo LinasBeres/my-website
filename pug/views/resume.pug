@@ -1,14 +1,130 @@
 extends ../partial/_view
 
 append meta
-  title Resume | Linas Beresna
+  title CV | Linas Beresna
 
 append styles
   link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css")
   link(rel="stylesheet" href="../stylesheets/styles.css")
+  link(rel="stylesheet" href="../stylesheets/cv.css")
+
+append scripts
+  script(src="../js/cv.js")
 
 block view-body
-  div.pageContent
-    div.holder
-      +content("Under Construction")
-        p Please wait until this page has been built.
+  .cv-wrapper#cv-wrapper
+    .cv-container
+
+      header.cv-header
+        .cv-name-block
+          h1.cv-name Linas Beresna
+          p.cv-location Vancouver, Canada
+          .cv-contacts
+            a(href="mailto:beres.linas@gmail.com") beres.linas@gmail.com
+            span.cv-sep ·
+            span +1 604 369 6235
+            span.cv-sep ·
+            a(href="https://github.com/LinasBeres") github.com/LinasBeres
+            span.cv-sep ·
+            a(href="https://uk.linkedin.com/in/linas-beresna") LinkedIn
+        button.cv-toggle#cv-toggle(type="button") Dark Mode
+
+      section.cv-section
+        h2.cv-section-title Education
+        .cv-entry
+          .cv-entry-header
+            span.cv-entry-title PhD in Computer Graphics
+            span.cv-entry-date 2021 – Present
+          p.cv-entry-org Simon Fraser University, Canada
+          p.cv-entry-detail Supervised by Eugene Fiume.
+        .cv-entry
+          .cv-entry-header
+            span.cv-entry-title MEng Computer Science and Mathematics
+            span.cv-entry-date 2015 – 2019
+          p.cv-entry-org University College London, UK
+          p.cv-entry-detail Graduated with first-class honours. Exchange at University of Waterloo, Canada (2017–2018).
+
+      section.cv-section
+        h2.cv-section-title Technical Skills
+        table.cv-skills-table
+          tbody
+            tr
+              th Advanced
+              td C++, gdb, Linux, Python, Mitsuba
+            tr
+              th Intermediate
+              td Git, OSL, USD
+            tr
+              th Basic Knowledge
+              td Houdini, Maya, JavaScript, OpenGL, Qt
+
+      section.cv-section
+        h2.cv-section-title Experience
+        .cv-entry
+          .cv-entry-header
+            span.cv-entry-title Part-time Rendering Engineer
+            span.cv-entry-date June 2022 – May 2025; Sept 2025 – Present
+          p.cv-entry-org Image Engine Design · Vancouver, Canada
+          ul.cv-entry-bullets
+            li Supporting lighting and lookdev departments by maintaining legacy software and Gaffer integration.
+            li Developing and optimising rendering tools using C++, Python, and OSL.
+        .cv-entry
+          .cv-entry-header
+            span.cv-entry-title Research Intern – Digital Humans
+            span.cv-entry-date May 2025 – August 2025
+          p.cv-entry-org Disney Research Zurich · Zurich, Switzerland
+          ul.cv-entry-bullets
+            li Conducted research and development within the Digital Humans team.
+        .cv-entry
+          .cv-entry-header
+            span.cv-entry-title RnD Rendering Engineer
+            span.cv-entry-date July 2020 – August 2021
+          p.cv-entry-org Animal Logic · Sydney, Australia
+          ul.cv-entry-bullets
+            li Built and supported the proprietary renderer Glimpse using C++14, USD, and OptiX.
+            li Created artist-facing tools and shaders for Maya, Houdini, and in-house applications.
+        .cv-entry
+          .cv-entry-header
+            span.cv-entry-title RnD Software Engineer – On-Set Tools
+            span.cv-entry-date July 2019 – July 2020
+          p.cv-entry-org DNEG · London, UK
+          ul.cv-entry-bullets
+            li Created and supported tools for the shoot department to automate importing and sorting large datasets.
+            li Developed cross-platform applications using C++, Python, and Qt.
+        .cv-entry
+          .cv-entry-header
+            span.cv-entry-title Software Engineer Intern
+            span.cv-entry-date August 2018 – September 2018
+          p.cv-entry-org Gambit Research · London, UK
+          ul.cv-entry-bullets
+            li Redesigned user-input logging services, migrating the codebase from Node.js to Python.
+            li Utilised Docker and Kubernetes for containerised deployment.
+        .cv-entry
+          .cv-entry-header
+            span.cv-entry-title Research Intern
+            span.cv-entry-date June 2018 – August 2018
+          p.cv-entry-org UCL – Surgical Robot Vision Group · London, UK
+          ul.cv-entry-bullets
+            li Investigated binary classification for cancer cells using Deep Learning (TensorFlow).
+            li Automated microscope hardware using C++ and OpenCV for edge detection and auto-focusing.
+
+      section.cv-section
+        h2.cv-section-title Publications
+        ul.cv-publications
+          li
+            | Neary-Zajiczek, L.,
+            strong Beresna, L.
+            | , et al. (2023). Minimum resolution requirements of digital pathology images for accurate
+            | classification.
+            em Medical Image Analysis
+            | , 89:102891.
+            |
+            a(href="https://pubmed.ncbi.nlm.nih.gov/37536022/") [PubMed]
+          //- Uncomment once published:
+          //- li
+          //-   strong Beresna, L.
+          //-   | , Fiume, E. (2026). Glare Mitigation using a Differentiable Unified Glare Rating.
+          //-   |
+          //-   em Eurographics Symposium on Rendering – DL-only Track.
+          //-   |
+          //-   a(href="../views/egsr2026.html") [Project]

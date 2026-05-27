@@ -4,10 +4,10 @@
   "description": "Dev code for my website",
   "scripts": {
     "build:html": "pug pug/ --out .",
-    "build:css": "sass sass/styles.sass stylesheets/styles.css",
+    "build:css": "sass sass/styles.sass stylesheets/styles.css && sass sass/cv.sass stylesheets/cv.css",
     "build": "npm run build:html && npm run build:css",
     "watch:html": "pug pug/ --out . --watch",
-    "watch:css": "sass sass/styles.sass stylesheets/styles.css --watch"
+    "watch:css": "sass --watch sass/styles.sass:stylesheets/styles.css sass/cv.sass:stylesheets/cv.css"
   },
   "repository": {
     "type": "git",
