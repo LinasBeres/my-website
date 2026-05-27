@@ -4,11 +4,10 @@
 *.scss.map
 *.css
 
-*.js
 *.html
 *.swp
 
 package-lock.json
 node_modules/
-bower_components/
+stylesheets/
 

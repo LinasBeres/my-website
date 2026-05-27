@@ -2,9 +2,12 @@
   "name": "my-website",
   "version": "1.0.0",
   "description": "Dev code for my website",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:html": "pug pug/ --out .",
+    "build:css": "sass sass/styles.sass stylesheets/styles.css",
+    "build": "npm run build:html && npm run build:css",
+    "watch:html": "pug pug/ --out . --watch",
+    "watch:css": "sass sass/styles.sass stylesheets/styles.css --watch"
   },
   "repository": {
     "type": "git",
@@ -12,15 +15,8 @@
   },
   "author": "Linas Beresna",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/LinasBeres/my-website/issues"
-  },
-  "homepage": "https://github.com/LinasBeres/my-website#readme",
   "devDependencies": {
-    "bower": "^1.8.14",
-    "coffeescript": "^2.7.0",
-    "grunt": "^1.5.3",
-    "pug": "^3.0.2",
-    "sass": "^1.52.3"
+    "pug-cli": "^1.0.0-alpha6",
+    "sass": "1.77.8"
   }
 }
