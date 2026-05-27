@@ -5,13 +5,17 @@ extends partial/_page
 //- ---------------- Mixins of goodness ---------------- -\\
 //--------------------------------------------------------\\
 
-mixin projects
-  .projects.links
-    div.title Projects
-    div.horizontal_line
-    div.list
-      a(href="https://github.com/LinasBeres/rez-packages") Rez Package Collector
-      a(href="https://github.com/LinasBeres/spindulys") Spindulys
+mixin paper(thumbnail, title, authors, venue, projectUrl, paperUrl)
+  .publication
+    img.pub-thumbnail(src=thumbnail alt=title)
+    .pub-info
+      .pub-title
+          a(href=projectUrl)= title
+      .pub-authors!= authors.replace('Linas Beresna', '<strong>Linas Beresna</strong>')
+      .pub-venue= venue
+    .pub-buttons
+      a.pub-btn(href=projectUrl) Project
+      a.pub-btn(href=paperUrl) Paper
 
 mixin socials
   .socials.links
@@ -36,9 +40,7 @@ mixin interests
     div.horizontal_line
     div.list
       a(href="./views/graphics.html") <s>Graphics!</s>
-      a(href="./views/snowboarding.html") <s>🏂 Snowboarding 🏂</s>
-      a(href="./views/travelling.html") <s>Travelling</s>
-      a(href="./views/running.html") <s>Running</s>
+      a(href="./views/motorbiking.html") Motorbiking
 
 //-----------------------------------------------------------\\
 //- ----------------- Main Page Extensions ---------------- -\\
@@ -59,12 +61,14 @@ block body
         - var gruvi = '<a href="https://gruvi.cs.sfu.ca/">GrUVi</a>'
         - var eugene = '<a href="https://www.dgp.toronto.edu/~elf/">Eugene Fiume</a>'
         - var tobias = '<a href="https://www.homepages.ucl.ac.uk/~ucactri/">Tobias Ritschel</a>'
-        p Hello hello! I'm a PhD student at !{gruvi} labs at SFU and am supervised by !{eugene}. My research is in the intersection of realtime and photorealistic rendering. I did my masters at UCL under !{tobias} and have worked for a couple of years in the VFX and animation industry.
+        p Hello hello! I'm a PhD student at !{gruvi} labs at SFU and am supervised by !{eugene}. My research is in visualisation, photorealistic rendering, austere graphics and differentiable rendering. I did my masters at UCL under !{tobias} and have worked for a couple of years in the VFX and animation industry.
       div.inline
-        +projects
         +socials
         +resume
         +interests
+    div.publications-holder
+      +content("Publications")
+        +paper('./images/papers/placeholder.jpg', 'Glare Mitigation using a Differentiable Unified Glare Rating', 'Linas Beresna, Eugene Fiume', 'Eurographics Symposium on Rendering (EGSR), 2026', './views/egsr2026.html', './files/papers/egsr2026.pdf')
 
 append scripts
   script(src="js/form.js")

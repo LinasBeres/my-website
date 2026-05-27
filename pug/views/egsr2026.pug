@@ -1,0 +1,42 @@
+extends ../partial/_project
+
+append meta
+  title Glare Mitigation using a Differentiable Unified Glare Rating | Linas Beresna
+
+block project-header
+  h1.project-title Glare Mitigation using a Differentiable Unified Glare Rating
+  p.pub-authors
+    strong Linas Beresna
+    | , Eugene Fiume
+  p.pub-venue Eurographics Symposium on Rendering (EGSR), 2026
+
+block teaser
+  img(src='../images/papers/egsr2026/teaser.jpg' alt='Glare Mitigation teaser image')
+  p.teaser-caption Starting from an initial high glare state (left), our differentiable rendering framework jointly optimises material parameters ($\alpha, \eta$) and light source distributions to reduce the UGR. By utilising a point spread function and a soft sigmoid to formulate a continuous proxy, the framework smoothly guides the scene until a target ergonomic threshold (e.g., $\mathrm{UGR} \le 17$) is reached (right). Our method surgically mitigates localised glare hotspots while preserving the global illumination and aesthetic intent of the original indoor scene.
+
+block abstract
+  p Recent research in differentiable light transport extends the utility of computer graphics algorithms beyond traditional image generation, offering powerful tools for physical inverse design. In architectural and automotive applications, visual discomfort from glare is a critical design rating, traditionally quantified by the discrete CIE Unified Glare Rating (UGR). The standard UGR formulation relies on strict binary thresholds, making it fundamentally incompatible with gradient-based inverse rendering. In this paper, we introduce a continuous, fully differentiable proxy for UGR. To resolve the severe optimisation instabilities caused by Monte Carlo variance at low sample densities, we introduce a differentiable optical scattering pass that simulates the Point Spread Function (PSF) of the human eye to heal fractured evaluation masks. We replace the discrete UGR step function with a tunable sigmoid boundary, enabling gradients to flow smoothly from the psychophysical measure back to the physical scene parameters. We deploy this differentiable framework to systematically reduce glare across three radiometric domains: surface-side microgeometry roughening, boundary-side index of refraction (IOR) optimisation, and source-side emitter gobo masking. By transforming a passive perceptual evaluation into an active loss landscape, our framework provides a robust, physics-based pipeline for optimizing visual comfort in complex global illumination environments.
+
+block resources
+  a.pub-btn(href='../files/papers/egsr2026.pdf') Paper
+  a.pub-btn(href='#') Publisher
+  a.pub-btn(href='#citation') Cite
+  a.pub-btn(href='#') Slides
+  a.pub-btn(href='#') Code
+
+block figures-section
+
+block citation-text
+  | Linas Beresna and Eugene Fiume. 2026. Glare Mitigation using a Differentiable Unified Glare Rating.
+  | In Eurographics Symposium on Rendering. The Eurographics Association.
+
+block citation-bibtex
+  | @inproceedings{Beresna2026Glare,
+  |     booktitle = {Eurographics Symposium on Rendering},
+  |     title     = {{Glare Mitigation using a Differentiable Unified Glare Rating}},
+  |     author    = {Beresna, Linas and Fiume, Eugene},
+  |     year      = {2026},
+  |     publisher = {The Eurographics Association},
+  |     ISSN      = {1727-3463},
+  |     DOI       = {10.2312/sr.XXXXXXX}
+  | }

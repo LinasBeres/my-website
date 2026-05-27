@@ -1,0 +1,38 @@
+extends ../partial/_project
+
+append meta
+  title Paper Title | Linas Beresna
+
+block project-header
+  h1.project-title Paper Title Goes Here
+  p.pub-authors
+    strong Linas Beresna
+    | , Co-Author Name
+  p.pub-venue Venue Name, Year
+
+block teaser
+  img(src='../images/papers/placeholder.jpg' alt='Paper teaser image')
+  p.teaser-caption Caption text goes here.
+
+block abstract
+  p Abstract goes here.
+
+block resources
+  a.pub-btn(href='#') Paper
+  a.pub-btn(href='#') Publisher
+  a.pub-btn(href='#citation') Cite
+  a.pub-btn(href='#') Slides
+  a.pub-btn(href='#') Code
+
+block figures-section
+
+block citation-text
+  | Author Names. Year. Paper Title. In Venue.
+
+block citation-bibtex
+  | @inproceedings{AuthorYearKey,
+  |     author    = {Author Names},
+  |     title     = {Paper Title},
+  |     booktitle = {Venue},
+  |     year      = {2026}
+  | }
