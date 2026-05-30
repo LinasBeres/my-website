@@ -9,7 +9,7 @@ class FormInput {
   _focus() {
     const { form, notForm } = this;
     $(document).keydown((e) => {
-      if (!e.ctrlKey && !e.altKey && !e.metaKey) {
+      if (!e.ctrlKey && !e.altKey && !e.metaKey && $(form).length) {
         $(form).css('display', 'flex');
         $(notForm).hide();
         $(`${form} input`).focus();
